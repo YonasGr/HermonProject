@@ -29,7 +29,7 @@ app.post('/api/validate-user', (req, res) => {
   // Email validation
   if (!email || email.trim() === '') {
     errors.email = 'Email is required';
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
     errors.email = 'Please enter a valid email address';
   }
   
